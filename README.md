@@ -15,9 +15,9 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
 1. Create new user named grader and give it the permission to sudo
   - SSH into the server through `ssh ubuntu@18.191.195.85 -p 22 -i udacity_final.rsa`
   - Run `$ sudo adduser grader` to create a new user named grader
-  - Create a new file in the sudoers directory with `sudo nano /etc/sudoers.d/grader`
+  - Create a new file in the sudoers directory with `sudo vim /etc/sudoers.d/grader`
   - Add the following text `grader ALL=(ALL:ALL) ALL`
-  - Run `sudo nano /etc/hosts`
+  - Run `sudo vim /etc/hosts`
   - Prevent the error `sudo: unable to resolve host` by adding this line `127.0.1.1 ip-10-20-52-12`
   - Protip: Use `sudo su - grader` to easily move back and forth as root and grader users. 
    
@@ -26,7 +26,7 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
   - Fetch new versions of packages with `sudo apt-get upgrade`
 
 3. Change SSH port from 22 to 2200
-  - Run `sudo nano /etc/ssh/sshd_config`
+  - Run `sudo vim /etc/ssh/sshd_config`
   - Change the port from 22 to 2200
   
 4. Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
@@ -42,7 +42,7 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
   - Make sure the authorized_keys file is the same for grader as it is for the root user.  
 
 7. Disable ssh login for root user
-  - Run `sudo nano /etc/ssh/sshd_config`
+  - Run `sudo vim /etc/ssh/sshd_config`
   - Change `PermitRootLogin without-password` line to `PermitRootLogin no`
   - Restart ssh with `sudo service ssh restart`
  
@@ -86,11 +86,11 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
   - Install other project dependencies `sudo pip install httplib2 oauth2client sqlalchemy psycopg2 sqlalchemy_utils`
 
 13. Update path of client_secrets.json file
-  - `nano __init__.py`
-  - Change client_secrets.json path to `/var/www/catalog/catalog/client_secrets.json`
+  - `vim __init__.py`
+  - Change client_secrets.json path to `/var/www/catalog/item-catalog/client_secrets.json`
   
 14. Configure and enable a new virtual host
-  - Run this: `sudo nano /etc/apache2/sites-available/catalog.conf`
+  - Run this: `sudo vim /etc/apache2/sites-available/catalog.conf`
   - Paste this code: 
   ```
   <VirtualHost *:80>
