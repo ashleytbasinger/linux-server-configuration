@@ -13,7 +13,7 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
 ### Walkthrough
 
 1. Create new user named grader and give it the permission to sudo
-  - SSH into the server through `vagrant ssh`
+  - SSH into the server through `ssh ubuntu@18.191.195.85 -p 22 -i udacity_final.rsa`
   - Run `$ sudo adduser grader` to create a new user named grader
   - Create a new file in the sudoers directory with `sudo nano /etc/sudoers.d/grader`
   - Add the following text `grader ALL=(ALL:ALL) ALL`
@@ -33,7 +33,7 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
   - `sudo ufw allow 2200/tcp`
   - `sudo ufw allow 80/tcp`
   - `sudo ufw allow 123/udp`
-  - `sudo ufw enable`
+  - `sudo ufw enable` (maybe this particular line should go last, just in case)
   
 5. Configure the local timezone to UTC
   - Run `sudo dpkg-reconfigure tzdata` and then choose UTC
