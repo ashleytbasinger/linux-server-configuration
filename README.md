@@ -6,7 +6,7 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
 
 - IP address: 18.191.195.85
 
-- Accessible SSH port: 2200
+- Accessible SSH port: 2200 (not a default!)
 
 - Application URL: http://ec2-18.191.195.85.us-west-2.compute.amazonaws.com/
 
@@ -136,6 +136,6 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
 16. Restart Apache 
   - `sudo service apache2 restart`
   
-17. Visit site at [http://18.191.195.85](http://18.191.195.85)
+17. Visit site at [http://18.191.195.85/catalog](http://18.191.195.85/catalog)
 
 Much gratitude to [https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps]
